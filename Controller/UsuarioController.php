@@ -2,43 +2,45 @@
 
     namespace App\Controller;
 
-    use App\Model\Categoria;
+    use App\Model\Usuario;
     use Exeption;
 
-    final class CategoriaController extends Controller
+    final class UsuarioController extends Controller
     {
         public static function index() : void
         {
             parent::isProtected();
 
-            $model = new Categoria();
+            $model = new Usuario();
 
             try
             {
               $model->getAllRows();
             } catch(Exception $e) {
-                $model->setError("Ocorreu um erro ao buscar as categorias");
+                $model->setError("Ocorreu um erro ao buscar os usuários");
                 $model->setError($e->getMessage());
             }
 
-            parent::render('Categoria/lista_categoria.php', $model);
+            parent::render('Usuario/lista_usuario.php', $model);
         }
 
         public static function cadastro() : void
         {
             parent::isProtected();
 
-            $model = new Categoria();
+            $model = new Usuario();
 
             try
             {
                 if(parent::isPost())
                 {
                     $model->Id = !empty($_POST['id']) ? $_POST['id'] : null;
-                    $model->Descricao = $_POST['descricao'];
+                    $model->Nome = $_POST['nome'];
+                    $model->Email = $_POST['email'];
+                    $model->Senha = $_POST['senha'];
                     $model->save();
 
-                    parent::redirect("/categoria");
+                    parent::redirect("/usuario");
 
                 } else
                 {
@@ -56,27 +58,27 @@
 
             }
 
-            parent::render('Categoria/form_categoria.php', $model);
+            parent::render('Usuario/form_usuario.php', $model);
         }
 
         public static function delete() : void
         {
             parent::isProtected();
 
-            $model = new Categoria();
+            $model = new Usuario();
 
             try
             {
                 $model->delete( (int) $_GET['id']);
-                parent::redirect("/categoria");
+                parent::redirect("/usuario");
 
             } catch(Exception $e)
             {
-                $model->setError("Ocorreu um erro ao excluir a categoria");
+                $model->setError("Ocorreu um erro ao excluir um usuario");
                 $model->setError($e->getMessage());
             }
 
-            parent::render('Categoria/lista_categoria.php', $model);
+            parent::render('Usuario/lista_usuario.php', $model);
 
         }
     } // fim da classe
