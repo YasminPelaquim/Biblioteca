@@ -10,7 +10,7 @@ final class LoginController {
 
         $model = new Login();
 
-        if($_SERVER['REQUEST_METHODE'] == "POST"){
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
             $model->Email = $_POST['email'];
             $model->Senha = $_POST['senha'];
 
