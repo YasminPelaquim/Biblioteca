@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($model->rools as $aluno): ?>
+                <?php foreach($model->rows as $aluno): ?>
                 <tr>
                     <td><?= $aluno->Id ?> </td>
                     <td><a href="/aluno/cadastro?id=<?=Id ?>"><?= $aluno->Nome ?> </a> </td>

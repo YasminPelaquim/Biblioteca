@@ -24,7 +24,7 @@ final class Aluno extends Model {
 
         set{
             if(empty($value))
-            throw new Exeption("Preencha o RA");
+            throw new Exception("Preencha o RA");
         $this->RA = $value;
         }
 
@@ -53,7 +53,7 @@ final class Aluno extends Model {
         }
 
         function getAllRows() : array{
-            $this->rows = new AlunoDAO()->selecte();
+            $this->rows = new AlunoDAO()->select();
         
             return $this->rows;
         }
