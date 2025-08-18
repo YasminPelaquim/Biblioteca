@@ -12,7 +12,7 @@ final class Categoria extends Model {
         set{
             if(strlen($value)
             < 3)
-        throw new Exeption("Descreva com palavras");
+        throw new Exception("Descreva com palavras");
 
         $this->Descricao = $value;
         }
@@ -29,7 +29,7 @@ final class Categoria extends Model {
         }
 
         function getAllRows() : array{
-            $this->rows = new CategoriaDAO()->selecte();
+            $this->rows = new CategoriaDAO()->select();
         
             return $this->rows;
         }

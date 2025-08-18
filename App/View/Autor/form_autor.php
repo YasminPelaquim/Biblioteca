@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistemas Biblioteca - Cadastro de Autores </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <div>
@@ -13,27 +13,29 @@
         <h1> Lista de Autores </h1>
         <a href="/autor/cadastro"> Novo Autor </a>
         <?= $model->getErrors() ?>
-        <table class ="table">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Data de Nascimento</th>
-                    <th scope="col">CPF</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($model->rools as $autor): ?>
-                <tr>
-                    <td><?= $autor->Id ?> </td>
-                    <td><a href="/autor/cadastro?id=<?=Id ?>"><?= $autor->Nome ?> </a> </td>
-                    <td><?= $autor->Data_de_Nascimento ?> </td>
-                    <td><?= $autor->CPF ?> </td>
-                    <td><a href="/autor/delete?id=<?=$autor->Id ?>">Remover </a> </td>
-                </tr>
-                <?php endforeach ?>
-                </tbody>
-        </table>
+        
+        <form method="post" action="/autor/cadastro" class="p-5">
+
+            <input name="id" type="hidden" value="<?= $model->Id ?>" />
+
+            <div class="mb-3">
+                <label for="nome" class="form-label"> Nome: </label>
+                <input type="text" value="<?= $model->Nome ?>"
+                       class="form-control" name="nome" id="nome">
+            </div>
+            <div class="mb-3">
+                <label for="data de nascimento" class="form-label"> Data de Nascimento: </label>
+                <input type="date" value="<?= $model->Data_de_Nascimento ?>"
+                       class="form-control" name="data de nascimento" id="data de nascimento">
+            </div>
+            <div class="mb-3">
+                <label for="cpf" class="form-label"> CPF: </label>
+                <input type="text" value="<?= $model->CPF ?>"
+                       class="form-control" name="cpf" id="cpf">
+            </div>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </form>
     </div>
 
     <script scr="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>

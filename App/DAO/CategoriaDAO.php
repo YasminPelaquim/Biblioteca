@@ -5,8 +5,9 @@ namespace App\DAO;
 use App\Model\Categoria;
 
 final class CategoriaDAO extends DAO{
+    
     public function _construct(){
-        parent::_construct();
+        parent::__construct();
     }
 
     public function save(Categoria $model) : Categoria{
@@ -18,7 +19,7 @@ final class CategoriaDAO extends DAO{
 
         $stmt = parent::$conexao->prepare($sql);
 
-        $stmt->bindValue(1, $model->Descrição);
+        $stmt->bindValue(1, $model->Descricao);
         $stmt->execute();
         $model->Id = parent::$conexao->lastInsertId();
 
@@ -30,7 +31,7 @@ final class CategoriaDAO extends DAO{
 
         $stmt = parent::$conexao->prepare($sql);
 
-        $stmt->bindValue(1, $model->Descrição);
+        $stmt->bindValue(1, $model->Descricao);
         $stmt->bindValue(2, $model->Id);
         $stmt->execute();
         

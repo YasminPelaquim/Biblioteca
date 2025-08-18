@@ -3,7 +3,7 @@
 namespace App\Model;
 
 use App\DAO\autorDAO;
-use Exeption;
+use Exception;
 
 final class Autor extends Model {
     public ?int $Id = null;
@@ -12,7 +12,7 @@ final class Autor extends Model {
         set{
             if(strlen($value)
             < 3)
-        throw new Exeption("Nome deve ter no mínimo três caracteres.");
+        throw new Exception("Nome deve ter no mínimo três caracteres.");
 
         $this->Nome = $value;
         }
@@ -24,7 +24,7 @@ final class Autor extends Model {
 
         set{
             if(empty($value))
-            throw new Exeption("Preencha a data de nascimento");
+            throw new Exception("Preencha a data de nascimento");
         $this->Data_de_Nascimento = $value;
         }
 
@@ -36,7 +36,7 @@ final class Autor extends Model {
         set{
             if(strlen($value)
             < 3)
-        throw new Exeption("O CPF deve ter onze caracteres.");
+        throw new Exception("O CPF deve ter onze caracteres.");
 
         $this->CPF = $value;
         }
@@ -53,7 +53,7 @@ final class Autor extends Model {
         }
 
         function getAllRows() : array{
-            $this->rows = new AutorDAO()->selecte();
+            $this->rows = new AutorDAO()->select();
         
             return $this->rows;
         }

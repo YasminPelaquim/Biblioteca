@@ -6,7 +6,7 @@ use App\Model\Aluno;
 
 final class AlunoDAO extends DAO{
     public function _construct(){
-        parent::_construct();
+        parent::__construct();
     }
 
     public function save(Aluno $model) : Aluno{
@@ -14,7 +14,7 @@ final class AlunoDAO extends DAO{
     }
 
     public function insert(Aluno $model) : Aluno{
-        $sql = "INSERT INTO aluno (nome, ra, curso) VALUES (?, ?, ?,) ";
+        $sql = "INSERT INTO aluno (Nome, RA, Curso) VALUES (?, ?, ?) ";
 
         $stmt = parent::$conexao->prepare($sql);
 

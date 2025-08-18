@@ -3,7 +3,7 @@
     namespace App\Controller;
 
     use App\Model\Autor;
-    use Exeption;
+    use Exception;
 
     final class AutorController extends Controller
     {

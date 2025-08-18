@@ -3,7 +3,7 @@
 namespace App\Model;
 
 use App\DAO\alunoDAO;
-use Exeption;
+use Exception;
 
 final class Aluno extends Model {
     public ?int $Id = null;
@@ -12,7 +12,7 @@ final class Aluno extends Model {
         set{
             if(strlen($value)
             < 3)
-        throw new Exeption("Nome deve ter no mínimo três caracteres.");
+        throw new Exception("Nome deve ter no mínimo três caracteres.");
 
         $this->Nome = $value;
         }
@@ -36,7 +36,7 @@ final class Aluno extends Model {
         set{
             if(strlen($value)
             < 3)
-        throw new Exeption("Curso deve ter no mínimo três caracteres.");
+        throw new Exception("Curso deve ter no mínimo três caracteres.");
 
         $this->Curso = $value;
         }
