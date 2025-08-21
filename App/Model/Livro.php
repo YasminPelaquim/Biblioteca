@@ -56,7 +56,7 @@ final class Livro extends Model
         get => $this->Editora ?? null;
     }
 
-    public ?string $Ano
+    public ?int $Ano
     {
         set
         {

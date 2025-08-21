@@ -15,7 +15,7 @@ final class CategoriaDAO extends DAO{
     }
 
     public function insert(Categoria $model) : Categoria{
-        $sql = "INSERT INTO categoria (descricao) VALUES (?, ) ";
+        $sql = "INSERT INTO categoria (descricao) VALUES (? ) ";
 
         $stmt = parent::$conexao->prepare($sql);
 

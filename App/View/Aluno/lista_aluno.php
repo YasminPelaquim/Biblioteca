@@ -25,7 +25,7 @@
                 <?php foreach($model->rows as $aluno): ?>
                 <tr>
                     <td><?= $aluno->Id ?> </td>
-                    <td><a href="/aluno/cadastro?id=<?=Id ?>"><?= $aluno->Nome ?> </a> </td>
+                    <td><a href="/aluno/cadastro?id=<?= $model-> Id ?>"><?= $aluno->Nome ?> </a> </td>
                     <td><?= $aluno->Curso ?> </td>
                     <td><a href="/aluno/delete?id=<?=$aluno->Id ?>">Remover </a> </td>
                 </tr>

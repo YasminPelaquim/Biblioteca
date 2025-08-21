@@ -6,7 +6,7 @@ use App\Model\Autor;
 
 final class AutorDAO extends DAO{
     public function _construct(){
-        parent::_construct();
+        parent::__construct();
     }
 
     public function save(Autor $model) : Autor{
@@ -14,12 +14,12 @@ final class AutorDAO extends DAO{
     }
 
     public function insert(Autor $model) : Autor{
-        $sql = "INSERT INTO autor (nome, data_de_nascimento, cpf) VALUES (?, ?, ?,) ";
+        $sql = "INSERT INTO Autor (Nome, Data_Nascimento, CPF) VALUES (?, ?, ?) ";
 
         $stmt = parent::$conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->Nome);
-        $stmt->bindValue(2, $model->Data_de_Nascimento);
+        $stmt->bindValue(2, $model->Data_Nascimento);
         $stmt->bindValue(3, $model->CPF);
         $stmt->execute();
         $model->Id = parent::$conexao->lastInsertId();
@@ -28,12 +28,12 @@ final class AutorDAO extends DAO{
     }
 
     public function update(Autor $model) : Autor{
-        $sql = "UPDATE autor SET nome=?, data_de_nascimento=?, cpf=? WHERE id=? ";
+        $sql = "UPDATE Autor SET Nome=?, Data_Nascimento=?, CPF=? WHERE id=? ";
 
         $stmt = parent::$conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->Nome);
-        $stmt->bindValue(2, $model->Data_de_Nascimento);
+        $stmt->bindValue(2, $model->Data_Nascimento);
         $stmt->bindValue(3, $model->CPF);
         $stmt->bindValue(4, $model->Id);
         $stmt->execute();

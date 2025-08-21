@@ -3,7 +3,7 @@
     namespace App\Controller;
 
     use App\Model\Categoria;
-    use Exeption;
+    use Exception;
 
     final class CategoriaController extends Controller
     {

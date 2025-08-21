@@ -6,7 +6,7 @@ use App\Model\Usuario;
 
 final class UsuarioDAO extends DAO{
     public function _construct(){
-        parent::_construct();
+        parent::__construct();
     }
 
     public function save(Usuario $model) : Usuario{

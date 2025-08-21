@@ -20,7 +20,7 @@ Id int auto_increment ,
 Id_Categoria int not null,
 Titulo varchar(255) not null,
 Editora varchar(150) not null,
-Ano Year not null,
+Ano int,
 Isbn varchar(100) not null,
 PRIMARY KEY (Id),
 FOREIGN KEY (Id_Categoria) REFERENCES Categoria(Id)
@@ -64,5 +64,3 @@ FOREIGN KEY(Id_Aluno) REFERENCES Aluno (Id)
 );
 
 INSERT INTO Usuario(nome, email,senha) VALUES ('yasmin','yasmin@gmail.com',sha1('12345'));
-
-select * from usuario;

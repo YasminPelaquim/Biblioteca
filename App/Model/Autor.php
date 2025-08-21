@@ -20,15 +20,15 @@ final class Autor extends Model {
         get => $this->Nome ?? null;
     }
 
-    public ?string $Data_de_Nascimento{
+    public ?string $Data_Nascimento{
 
         set{
             if(empty($value))
             throw new Exception("Preencha a data de nascimento");
-        $this->Data_de_Nascimento = $value;
+        $this->Data_Nascimento = $value;
         }
 
-        get => $this->Data_de_Nascimento ?? null;
+        get => $this->Data_Nascimento ?? null;
     }
 
     public ?string $CPF{

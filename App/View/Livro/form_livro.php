@@ -13,7 +13,7 @@
     <div>
         <?php include VIEWS . '/Includes/menu.php' ?>
 
-        <h1>Cadastro de Livro</h1>
+        <h1>Cadastro de Livrosssss</h1>
 
         <?= $model->getErrors() ?>
 

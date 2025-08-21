@@ -3,7 +3,7 @@
     namespace App\Controller;
 
     use App\Model\Usuario;
-    use Exeption;
+    use Exception;
 
     final class UsuarioController extends Controller
     {

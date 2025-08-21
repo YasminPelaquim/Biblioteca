@@ -25,8 +25,8 @@
             </div>
             <div class="mb-3">
                 <label for="data de nascimento" class="form-label"> Data de Nascimento: </label>
-                <input type="date" value="<?= $model->Data_de_Nascimento ?>"
-                       class="form-control" name="data de nascimento" id="data de nascimento">
+                <input type="date" value="<?= $model->Data_Nascimento ?>"
+                       class="form-control" name="Data_Nascimento" id="Data_Nascimento">
             </div>
             <div class="mb-3">
                 <label for="cpf" class="form-label"> CPF: </label>
