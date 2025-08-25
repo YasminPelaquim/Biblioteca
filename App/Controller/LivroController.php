@@ -30,8 +30,6 @@ final class LivroController extends Controller
 
         $model = new Livro();
 
-        echo "Estou onde quero tiagotas viado";
-
         var_dump($model->Id_Autores);
         
         try
